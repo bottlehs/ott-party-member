@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 // route-level code splitting
-const User = () => import('../views/User.vue')
+const listView = id => () => import('../views/ListView').then(m => m.default(id))
 
 export function createRouter () {
   return new Router({
@@ -12,8 +12,10 @@ export function createRouter () {
     fallback: false,
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: '/user', component: User },
-      { path: '/', redirect: '/user' }
+      { path: '/netflix/:page(\\d+)?', component: listView('netflix') },
+      { path: '/watcha/:page(\\d+)?', component: listView('watcha') },
+      { path: '/wavve/:page(\\d+)?', component: listView('wavve') },
+      { path: '/', redirect: '/netflix' }
     ]
   })
 }
