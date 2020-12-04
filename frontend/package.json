@@ -3,7 +3,6 @@
   "description": "ott party member",
   "author": "bottlehs <qudgns9@gmail.com>",
   "private": true,
-
   "scripts": {
     "dev": "node server",
     "start": "cross-env NODE_ENV=production node server",
@@ -54,5 +53,5 @@
     "webpack-hot-middleware": "^2.20.0",
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
-  }  
+  }
 }
